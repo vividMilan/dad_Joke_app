@@ -27,8 +27,10 @@ const JokeCard = () => {
     <>
       <Header />
       <div className='joke-card'>
-          {!joke ? "Press the Button to get a joke ;)" : <p>{joke}</p>}
-          {isLoading ? "Loading..." : ''}
+          <p>
+            {!joke ? "Press the Button to get a joke ;)" : joke}
+            {joke && isLoading ? "Loading..." : ''}
+          </p>
           <button onClick={() => handleNewJoke()}>Get a Joke</button>
       </div>
     </>
